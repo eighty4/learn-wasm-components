@@ -1,0 +1,5 @@
+package eighty4:odd-or-even;
+
+world library {
+    export is-odd-or-even: func(number: s32) -> bool;
+}
