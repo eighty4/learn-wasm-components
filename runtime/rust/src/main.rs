@@ -8,6 +8,8 @@ wasmtime::component::bindgen!({
 struct RuntimeState;
 
 fn main() -> wasmtime::Result<()> {
+    let input: i32 = std::env::args().last().unwrap().parse()?;
+
     let mut config = Config::new();
     config.wasm_component_model(true);
     let engine = Engine::new(&config)?;
@@ -17,12 +19,10 @@ fn main() -> wasmtime::Result<()> {
 
     let mut store = Store::new(&engine, RuntimeState {});
 
-    let (bindings, instance) = Lib::instantiate(&mut store, &component, &linker)?;
-
-    if bindings.call_is_odd_or_even(&mut store, 26)? {
-        println!("26 is even")
+    if bindings.call_is_odd_or_even(&mut store, input)? {
+        println!("{} is even", input)
     } else {
-        println!("26 is odd")
+        println!("{} is odd", input)
     }
 
     Ok(())
