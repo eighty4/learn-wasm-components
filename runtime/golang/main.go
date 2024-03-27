@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/bytecodealliance/wasmtime-go"
+	"github.com/bytecodealliance/wasmtime-go/v19"
 	"log"
 )
 
