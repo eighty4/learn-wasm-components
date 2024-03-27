@@ -2,7 +2,7 @@
 package main
 
 import (
-	"github.com/eighty4/learn-wasm-components/guest/golang/lib"
+	"github.com/eighty4/learn-wasm-components/component/golang/lib"
 )
 
 func init() {

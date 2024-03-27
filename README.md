@@ -19,7 +19,7 @@ brew install tinygo
 
 ## Build steps
 
-The guest/golang and guest/rust directories have a README.md files with instructions for building the WASM component.
+The component/golang and component/rust directories have a README.md files with instructions for building the WASM component.
 
 ## Inspecting components
 
@@ -30,13 +30,3 @@ wasm-tools validate is-odd-or-even.wasm --features component-model
 ```shell
 wasm-tools component wit is-odd-or-even.wasm
 ```
-
-## Current state
-
-The runtime/rust crate can run a component, but does not yet have WASI linked to be able to run a WASM component.
-
-```shell
-Error: import `wasi:io/error@0.2.0` has the wrong type
-```
-
-The crate needs to depend on the wasmtime-wasi crate before it can run the component.

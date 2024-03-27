@@ -12,7 +12,7 @@ fn main() -> wasmtime::Result<()> {
     let mut config = Config::new();
     config.wasm_component_model(true);
     let engine = Engine::new(&config)?;
-    let component = Component::from_file(&engine, "../../guest/golang/build/is_odd_or_even.component.wasm")?;
+    let component = Component::from_file(&engine, "../../../component/golang/build/is_odd_or_even.component.wasm")?;
 
     let mut linker: Linker<WasiP1Ctx> = Linker::new(&engine);
     wasmtime_wasi::command::sync::add_to_linker(&mut linker)?;
