@@ -21,11 +21,12 @@ brew install tinygo
 
 The golang directory has a README.md with instructions for building the WASM component.
 
-## Current state
+## Inspecting components
 
 ```shell
-2024/03/23 14:00:34 new module failed to parse WebAssembly module
+wasm-tools validate is-odd-or-even.wasm --features component-model
+```
 
-Caused by:
-    Invalid input WebAssembly code at offset 4: unknown binary version
+```shell
+wasm-tools component wit is-odd-or-even.wasm
 ```
