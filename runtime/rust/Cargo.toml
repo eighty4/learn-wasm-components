@@ -7,3 +7,4 @@ edition = "2021"
 
 [dependencies]
 wasmtime = { version = "19.0.0", features = ["runtime", "component-model"] }
+wasmtime-wasi = "19.0.0"
